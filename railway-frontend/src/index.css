@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #12213A;
+  --panel: #1B2E4A;
+  --panel-light: #24395C;
+  --paper: #F4EEDD;
+  --brass: #C9973C;
+  --amber: #F2B84B;
+  --ink: #1E1B16;
+  --cream: #EDE6D6;
+  --green: #3C8562;
+  --red: #B94A3D;
+  --muted: #8B93A7;
+  --border: rgba(237, 230, 214, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
