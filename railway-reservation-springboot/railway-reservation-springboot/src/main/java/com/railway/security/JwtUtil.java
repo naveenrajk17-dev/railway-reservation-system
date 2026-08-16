@@ -4,19 +4,23 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
 @Component
 public class JwtUtil {
 
-    // In a real production app, this key would come from an environment variable,
-    // not sit in code.
-    // For a learning project, a hardcoded secret is fine.
-    private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private final Key key;
+
     private final long EXPIRATION_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+    public JwtUtil(@Value("${jwt.secret}") String secret) {
+        this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+    }
 
     public String generateToken(String email, String role) {
         return Jwts.builder()
@@ -41,7 +45,7 @@ public class JwtUtil {
             getClaims(token);
             return true;
         } catch (Exception e) {
-            return false; // expired, tampered, or malformed
+            return false;
         }
     }
 
