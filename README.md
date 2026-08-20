@@ -58,7 +58,7 @@ A full-stack railway reservation system developed using React, Spring Boot, and 
 
 ## Project Structure
 
-\`\`\`
+
 railway-reservation-system/
 │
 ├── railway-frontend/
@@ -68,4 +68,4 @@ railway-reservation-system/
 │   └── Spring Boot backend
 │
 └── README.md
-\`\`\`
+
