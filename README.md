@@ -55,17 +55,9 @@ A full-stack railway reservation system developed using React, Spring Boot, and 
 
 * **Frontend:** Deployed on [Vercel](https://vercel.com)
 * **Backend & Database:** Deployed on [Railway](https://railway.app)
-
+  
 ## Project Structure
 
-
-railway-reservation-system/
-│
-├── railway-frontend/
-│   └── React frontend
-│
-├── railway-reservation-springboot/
-│   └── Spring Boot backend
-│
-└── README.md
+- **railway-frontend/** — React frontend
+- **railway-reservation-springboot/** — Spring Boot backend
 
